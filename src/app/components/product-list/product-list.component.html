@@ -1,0 +1,12 @@
+<!-- src/app/components/product-list/product-list.component.html -->
+<div class="product-list">
+  <h2>Products</h2>
+  <div class="products">
+    <div class="product" *ngFor="let product of products">
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      <p>Price: ${{ product.price }}</p>
+      <button (click)="addToBasket(product.id)">Add to Basket</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<!-- src/app/components/category-list/category-list.component.html -->
+<div class="category-list">
+  <h2>Categories</h2>
+  <ul>
+    <li *ngFor="let category of categories">
+      <a [routerLink]="['/products']" [queryParams]="{ categoryId: category.id }">{{ category.name }}</a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,11 @@
+<!-- src/app/components/basket/basket.component.html -->
+<div class="basket">
+  <h2>Your Basket</h2>
+  <div *ngIf="basketItems.length === 0">Your basket is empty.</div>
+  <ul *ngIf="basketItems.length > 0">
+    <li *ngFor="let item of basketItems">
+      <span>{{ item.productName }} - ${{ item.price }}</span>
+      <button (click)="deleteProduct(item.id)">Remove</button>
+    </li>
+  </ul>
+</div>
