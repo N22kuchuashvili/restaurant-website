@@ -8,7 +8,8 @@ import { AppConfig } from '../app.config'; // Import the config
   providedIn: 'root'
 })
 export class ApiService {
-  private baseUrl = AppConfig.apiUrl; // Use the API URL from the config
+  private baseUrl = 'https://restaurant.stepprojects.ge/api'
+  // AppConfig.apiUrl; // Use the API URL from the config
 
   constructor(private http: HttpClient) { }
 
@@ -36,7 +37,10 @@ export class ApiService {
     return this.http.get(`${this.baseUrl}/Categories/GetCategory/${categoryId}`);
   }
 
-  getFilteredProducts(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/Products/GetFiltered`);
+  getFilteredProducts(param : any): Observable<any> {
+    return this.http.get(`${this.baseUrl}/Products/GetFiltered?categoryId=${param}`);
+  }
+  getAllProduct(){
+    return this.http.get(`${this.baseUrl}/Products/GetAll`);
   }
 }

@@ -6,14 +6,17 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { BasketComponent } from './components/basket/basket.component';
 
 export const routes: Routes = [
+  { path: '', redirectTo: '/categories', pathMatch: 'full' }, // Redirect to categories by default
   { path: 'categories', component: CategoryListComponent },
   { path: 'products', component: ProductListComponent },
+  { path: 'products/:id', component: ProductListComponent },
+ 
   { path: 'basket', component: BasketComponent },
-  { path: '', redirectTo: '/categories', pathMatch: 'full' } // Redirect to categories by default
+
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
+// @NgModule({
+//   imports: [RouterModule.forRoot(routes)],
+//   exports: [RouterModule]
+// })
 export class AppRoutingModule { }

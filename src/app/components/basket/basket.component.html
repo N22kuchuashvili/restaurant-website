@@ -4,8 +4,8 @@
   <div *ngIf="basketItems.length === 0">Your basket is empty.</div>
   <ul *ngIf="basketItems.length > 0">
     <li *ngFor="let item of basketItems">
-      <span>{{ item.productName }} - ${{ item.price }}</span>
-      <button (click)="deleteProduct(item.id)">Remove</button>
+      <span>{{ item.product.name }} - ${{ item.product.price }}</span>
+      <button (click)="deleteProduct(item.product.id)">Remove</button>
     </li>
   </ul>
 </div>

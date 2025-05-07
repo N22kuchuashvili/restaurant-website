@@ -2,18 +2,18 @@ import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from "@a
 import { ApplicationConfig, provideZoneChangeDetection } from "@angular/core";
 import { provideRouter } from "@angular/router";
 import { routes } from './app.routes';
-import { HttpInterceptorService } from './http-interceptor.service';
+// import { HttpInterceptorService } from './http-interceptor.service';
 
-export const appConfig: ApplicationConfig = {
+export const AppConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }),
      provideRouter(routes),
       provideHttpClient(
         withInterceptorsFromDi()
       ),
-      {
-        provide: HTTP_INTERCEPTORS,
-        useClass: HttpInterceptorService,
-        multi: true
-      }
+      // {
+      //   provide: HTTP_INTERCEPTORS,
+      //   useClass: HttpInterceptorService,
+      //   multi: true
+      // }
   ]
 };
