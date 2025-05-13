@@ -43,4 +43,7 @@ export class ApiService {
   getAllProduct(){
     return this.http.get(`${this.baseUrl}/Products/GetAll`);
   }
+  getAllFilter(){
+    return this.http.get(`${this.baseUrl}/Products/GetFilter`);
+  }
 }

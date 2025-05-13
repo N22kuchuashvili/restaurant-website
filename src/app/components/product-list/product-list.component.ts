@@ -35,6 +35,16 @@ export class ProductListComponent implements OnInit {
     })
   }
 
+
+
+  getAllFilter(){
+    this.apiService.getAllFilter().subscribe((resp : any ) => {
+      console.log(resp)
+    })
+  }
+
+
+
   getFilteredProducts() {
     this.apiService.getFilteredProducts(this.categoryId).subscribe(data => {
        this.products = data

@@ -1,4 +1,4 @@
-<!-- src/app/components/basket/basket.component.html -->
+<!-- src/app/components/basket/basket.component.html
 <div class="basket">
   <h2>Your Basket</h2>
   <div *ngIf="basketItems.length === 0">Your basket is empty.</div>
@@ -9,3 +9,67 @@
     </li>
   </ul>
 </div>
+<div *ngFor="let item of basketItems">
+  <div class="product">
+    <h3>{{ item.name }}</h3>
+    <p>Price: {{ item.price | currency }}</p>
+    <div class="quantity-control">
+      <button (click)="decreaseQuantity(item)">-</button>
+      <span>{{ item.quantity }}</span>
+      <button (click)="increaseQuantity(item)">+</button>
+    </div>
+    <p>Total: {{ item.price * item.quantity | currency }}</p>
+  </div>
+</div> -->
+<section class="section1">
+  <div class="divForBackImg">
+      <span class="textForImg">My Cart</span>
+  </div>
+</section>
+
+<div class="divForHref">
+ <a routerLink="/home">Home </a>   /  <span> Cart </span>
+</div>
+
+<div class="categoriesText">
+  <h1>Cart</h1>
+</div>
+
+<section class="section2">
+
+  <table class="cart-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cartItems let pr of products">
+          <td>
+            <div class="product-details">
+              <button type="button" (click)="deleteProduct(item.product.id)">❌</button>
+              <img [src]="pr.product.image" alt="Product image" />
+              <span class="name">{{ pr.product.name }}</span>
+            </div>
+          </td>
+          <td>
+            <div class="quantity-input">
+              <button (click)="decrease(item)">-</button>
+              <span>{{ item.quantity }}</span>
+              <button (click)="increase(item)">+</button>
+            </div>
+          </td>
+          <td>${{ item.price }}</td>
+          <td>${{ item.price * item.quantity }}</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <div class="summary-row">
+      Total: <span class="total-amount">${{ totalPrice }}</span>
+    </div>
+    
+</section>
