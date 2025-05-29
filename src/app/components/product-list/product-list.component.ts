@@ -27,6 +27,10 @@ export class ProductListComponent implements OnInit {
       }
     
     });
+
+    this.apiService.getFilteredCategory().subscribe((resp : any ) => {
+      console.log(resp)
+    })
   }
   getAllProducts(){
     this.apiService.getAllProduct().subscribe((data :any) => {

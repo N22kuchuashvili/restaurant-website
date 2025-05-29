@@ -46,4 +46,7 @@ export class ApiService {
   getAllFilter(){
     return this.http.get(`${this.baseUrl}/Products/GetFilter`);
   }
+  getFilteredCategory(){
+    return this.http.get(`${this.baseUrl}/Products/GetFiltered`)
+  }
 }
